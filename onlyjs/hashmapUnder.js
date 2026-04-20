@@ -10,3 +10,11 @@ console.log(checkmap.size)
 for(let[key,value] of checkmap){
     console.log(key,value)
 }
+// set
+//get by index
+// size as refrence
+// for of and forEach as iterator
+// delete function as key
+// get only keys()
+// get only values()
+// clear() all the functiongit 
