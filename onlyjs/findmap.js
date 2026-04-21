@@ -1,16 +1,41 @@
-function wordFrequency(str){
-    let wordRepete = str.toLowerCase().split(/\W/);
-    let wordFrequency1 = new Map();
-    for(word of wordRepete){
-        if(word === '') continue;
-        if(wordFrequency1.has(word)){
-            wordFrequency1.set(word,wordFrequency1.get(word)+1)
+function wordFrequency(arr){
+    let str=arr.toLowerCase().split(/\W/);
+    let map = new Map();
+    for(let word of str){
+        if(word === "") continue;
+        if(map.has(word)){
+            map.set(word,map.get(word)+1)
         }else{
-            wordFrequency1.set(word,1)
+            map.set(word,1)
         }
     }
-    return wordFrequency1;
+    return map;
+}
+function phoneDirectory(arr){
+    let phone = new Map();
+    for(let i of arr){
+        const [name,number] = i.split(":")
+        phone.set(name,number)
+    }
+    return phone;
+}
+let str = "how are you my son and my beloved one";
+let findName=['Meer:03204522701']
+console.log(wordFrequency(str))
+console.log(phoneDirectory(findName))
+function anarGame(arr){
+    let map = new Map()
+    for(words of arr){
+        let sortedChar = words.split('').sort().join('')
+        if(map.has(sortedChar)){
+            map.get(sortedChar).push(words)
+        }else{
+            map.set(sortedChar,[words])
+        }
+    }
+    return Array.from(map.values())
 }
 
-let arrStr = "How are you my friend and how the things goes on!"
-console.log(wordFrequency(arrStr))
+let defArray=['dog','god','rich','cat','tac']
+
+console.log(anarGame(defArray))
