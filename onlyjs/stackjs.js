@@ -1,44 +1,59 @@
 class Stack{
     constructor(){
-        this.stack=[];
         this.maxSize=100;
-        this.top = -1
-       
-    }
-    isEmpty(){
-           let value=''
-        for (let value1 in stack){
-value++;
-        }
-         if(this.stack === null){
-            return "Nothing is in the stack"
-        }else{
-            return `We have ${value} values in the stack`
-        }
-       
-    }
-    isFull(){
-        let value=''
-        for (let value1 in stack){
-value++;
-        }
-    return (this.maxSize === -1?"The Stack is full ":`Here we go we have ${value} element`)
+        this.top=-1;
+        this.stack=[];
     }
     push(value){
-         if (this.stack.includes(value)) {
-        return "Duplicate value, not pushed";  // Or handle as needed (e.g., do nothing)
-    }
-        if (this.top >= this.maxSize - 1) {
-            return "Stack is full";
+        if(this.isFull()){
+            return "Stack is full"
         }
         this.top++;
-        this.stack[this.top] = value;
-        return value;
+        return this.stack[this.top]=value
+    }
+    isFull(){
+        return this.top === this.maxSize-1;
+    }
+    isEmpty(){
+        return this.top === -1;
+    }
+    remove(){
+        if(this.isEmpty()){
+            return "Stack is Empty"
+        }
+        this.top--;
+        return this.stack.pop();
+    }
+    peek(){
+        return this.stack[this.top]
     }
 }
-
-let stack = new Stack();
-stack.push(2)
-stack.push(2)
-stack.push(22)
+let stack = new Stack()
+stack.push(12)
 console.log(stack)
+function reverseString(str){
+let stack = new Stack();
+let sentence = "";
+for(let word in str){
+    stack.push(str[word])
+}
+while(!stack.isEmpty()){
+    sentence += stack.remove();
+}
+return sentence;
+}
+function anotherReverse(str){
+    let arr=[];
+    let reverse=""
+    for(let word in str){
+        arr.push(str[word])
+    }
+    while(arr.length){
+        reverse += arr.pop()
+    }
+    return reverse;
+}
+let sentence="This is quite strange for me"
+let result = reverseString(sentence)
+let result1 = anotherReverse(sentence)
+console.log(result1)
