@@ -24,11 +24,41 @@ class LinkedList{
             console.log(current.data)
             current = current.next
         }
+        return this;
     }
+    get(index){
+let current = this.head;
+let i=0;
+while(i<index){
+    current = current.next;
+    i++
 }
-let node = new Node("Hello")
-node.next = new Node("Welcome")
+return current.data;
+        }
+        insertAt(index,value){
+            if(index === 0){
+                const node = new Node(value);
+                this.next = this.head;
+                this.head = node
+            }else{
+                let current = this.head;
+                let previous = null;
+                let  i = 0;
+                while(i<index){
+                    previous=current ;
+                    current =current.next;
+                    i++
+
+                }
+                const node = new Node(value);
+                node.next = current;
+                previous.next = node;
+            }
+        }
+}
+let node = new LinkedList()
+node.add("Welcome")
 console.log(node)
 
 
-console.log(node.next)
+console.log(node.get(0))
