@@ -13,6 +13,12 @@ const days={
 const result = switchCase(days)
 console.log(result(2))
 
-let name1="Meer";
-let anoterName = {...name1}
-console.log(anoterName)
+let name1={
+    name:"Meer",
+    email:"do4best@gmail.com"
+};
+
+let anoterName = JSON.parse(JSON.stringify(name1))
+anoterName.email="panic_4_what@hotmail.com"
+console.log(anoterName.email)
+console.log(name1.email)
