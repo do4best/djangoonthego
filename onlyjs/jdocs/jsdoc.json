@@ -1,0 +1,14 @@
+{
+    "source":{
+        "include": ["src/index.js"]
+    },
+    "plugins":["plugins/markdown"],
+    "templates":{
+        "cleverLinks":true,
+        "monospaceLinks":true
+    },
+    "opts":{
+        "recurse":true,
+        "destination":"./docs/"
+    }
+}
