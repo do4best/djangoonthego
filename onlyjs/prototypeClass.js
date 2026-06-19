@@ -53,3 +53,7 @@ const findMax=(...max)=>{
 
 let arr = [11,2,3,4,5,66]
 console.log(findMax(...arr))
+function sumit(sum,...calc){
+    sum(...calc)
+}
+console.log(sumit(1,2,3,4,5))
