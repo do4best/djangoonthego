@@ -30,3 +30,29 @@ class MainWindow(QtWidgets.QWidget):
         self.division_btn = self.ui.pushButton_10
         self.multi_btn = self.ui.pushButton_14
         
+        self.operator_btn_list =[
+            (self.addition_btn,"+"),
+            (self.minus_btn,"-"),
+            (self.multi_btn,"*"),
+            (self.division_btn,"/"),
+        ]
+        
+        self.icon_config = {
+            self.close_btn: ["./cancel.png"],
+            self.plus_minus_btn: ["./maths.png"],
+            
+        }
+        self.initial_ui()
+        
+    def initial_ui(self):
+        self.setup_windows()
+        self.setup_buttons()
+        self.init_signal_slot()
+        
+    def setup_window(self):
+        self.setWindowFlags(QtCore.Qt.WindowType.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.output.setText("0")
+        
+    
+        
