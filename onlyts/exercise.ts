@@ -22,33 +22,46 @@
 
 // console.log(calculator(89,90,'/'))
 
-type Letter = string
+// type Letter = string
 
-function letterRepeat(sentence:Letter,letter:Letter):number{
-    let count = 0;
-    for(let i=0; i<sentence.length; i++){
-        if(sentence[i] === letter){
-            count++;
-        }
-    }
-    return count;
-}
-console.log(letterRepeat("Find the god and asked him help","d"))
+// function letterRepeat(sentence:Letter,letter:Letter):number{
+//     let count = 0;
+//     for(let i=0; i<sentence.length; i++){
+//         if(sentence[i] === letter){
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+// console.log(letterRepeat("Find the god and asked him help","d"))
 
-function findMax(arr:number[]):number{
-    return Math.max(...arr)
-}
-console.log(findMax([90,55,44,33,22,11]))
+// function findMax(arr:number[]):number{
+//     return Math.max(...arr)
+// }
+// console.log(findMax([90,55,44,33,22,11]))
 
-function findMax1(arr: number[]): number {
-    let max1:any;
+// function findMax1(arr: number[]): number {
+//     let max1:any;
     
-    max1 = arr.length > 0 ? arr[0] : Number.NEGATIVE_INFINITY;
-  for (const v of arr) {
-    if (v > max1) {
-      max1 = v;
-    }
-  }
-  return max1;
+//     max1 = arr.length > 0 ? arr[0] : Number.NEGATIVE_INFINITY;
+//   for (const v of arr) {
+//     if (v > max1) {
+//       max1 = v;
+//     }
+//   }
+//   return max1;
+// }
+// console.log(findMax1([90,55,44,33,22,11]))
+
+type words=string;
+
+function titleCase(str: string): string {
+  return str
+    .toLowerCase()
+    .split(/\s+/) // split on any whitespace
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
-console.log(findMax1([90,55,44,33,22,11]))
+let result:string="Find the God and ask him a lot of questions."
+console.log(titleCase(result))
+
