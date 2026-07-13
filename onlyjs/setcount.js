@@ -35,14 +35,8 @@ function rangeNumber(start,end){
     numbers.push(end);
     return numbers;
 }
-
-// Bubble sort repeatedly steps through the array,
-// compares adjacent elements, and swaps them if they
-// are in the wrong order. Each pass moves the largest
-// unsorted value to the end, so the remaining range
-// to inspect gets smaller on each iteration.
 function bubbleSort(arr){
-    for(let i=0; i<arr.length; i++){
+    for(let i=0; i<arr.length; i++){// it loop through the array
         for(let j=0; j<arr.length-i-1; j++){
             if(arr[j] > arr[j+1]){
                 const temp = arr[j];

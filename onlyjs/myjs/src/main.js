@@ -46,6 +46,7 @@ function recursion(number){
      counter++;
     return recursion(number)
 }
+
 document.querySelector('#app').innerHTML = `
 <h1>${recursion(19)}</h1>
 `
