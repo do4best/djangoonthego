@@ -40,3 +40,9 @@ const counter = privateCounter();
 console.log(counter.getValue());
 counter.increment(5);
 console.log(counter.getValue());
+
+function createPair<S,T>(v1:S,v2:T):[S,T]
+{
+    return [v1,v2]
+}
+console.log(createPair<string,number>("Hello",48))
