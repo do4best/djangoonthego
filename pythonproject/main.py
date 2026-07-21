@@ -5,7 +5,7 @@ class MainWindow(QtWidgets.QWidget):
     ERROR_MSG = "ERROR "
     MAX_FONT_SIZE = 100
     MIN_FONT_SIZE = 30
-    FONT_SIZE_THRESHOLD = [item for item in enumerate(90,30,-5),9]
+    FONT_SIZE_THRESHOLD = [item for item in enumerate(range(90,30,-5),9)]
     
     def __init__(self):
         super().__init__()
@@ -21,7 +21,7 @@ class MainWindow(QtWidgets.QWidget):
         self.ui.setupUi(self)
         
         self.output = self.ui.lineEdit
-        self.close_btn = self.ui.close_btn
+        self.close_btn = self.ui.close_Btn
         self.clear_btn = self.ui.pushButton_5
         self.plus_minus_btn = self.ui.pushButton_15
         self.percent_btn = self.ui.pushButton_2
@@ -45,8 +45,8 @@ class MainWindow(QtWidgets.QWidget):
         self.initial_ui()
         
     def initial_ui(self):
-        self.setup_windows()
-        self.setup_buttons()
+        self.setup_window()
+        self.setupButton()
         self.init_signal_slot()
         
     def setup_window(self):
@@ -100,3 +100,7 @@ class MainWindow(QtWidgets.QWidget):
     def percent(self):
         pass      
         
+if __name__ == "__main__":
+    app = QtWidgets.QApplication([])
+    window = MainWindow()
+    app.show()
