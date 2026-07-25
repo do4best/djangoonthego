@@ -35,20 +35,17 @@ console.log(factorial(40))
 /////// bubble sort
 const bubbleSort = (arr: number[]): number[] => {
     const len = arr.length;
-
     for (let i = 0; i < len; i++) {
-        for (let j = 0; j < len; j++) {
+        for (let j = 0; j < len - i - 1; j++) {
             if (arr[j]! > arr[j + 1]!) {
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                [arr[j], arr[j + 1]] = [arr[j + 1]!, arr[j]];
             }
         }
     }
-
     return arr;
 }
 
-
-const array = [9, 10, 3, 2, 1, 0, 5, 4, 6, 7, 8];
+const array:number[] = [9, 10, 3, 2, 1, 0, 5, 4, 6, 7, 8];
 console.log(bubbleSort(array));
 
 
