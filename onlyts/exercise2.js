@@ -38,3 +38,13 @@ let stack = new Stack();
 stack.pushIt("god")
 stack.pushIt(90)
 console.log(stack)
+const users={
+    name:"Meer",
+    getname(){
+        return this.name
+    }
+}
+
+const getname = users.getname()
+console.log(users.getname())
+console.log(getname())
